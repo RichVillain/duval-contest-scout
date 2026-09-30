@@ -48,10 +48,19 @@
     <p class="muted" id="foot"></p>
   </main>
   <script src="../data/scout-core.js"></script>
+  <script src="../data/stations/WJBT.js"></script>
+  <script src="../data/stations/WSOL.js"></script>
+  <script src="../data/stations/WHJX.js"></script>
+  <script src="../data/stations/WKSL.js"></script>
+  <script src="../data/stations/WQIK.js"></script>
+  <script src="../data/stations/WAPE.js"></script>
+  <script src="../data/stations/WJGL.js"></script>
+  <script src="../data/stations/WEJZ.js"></script>
+  <script src="../data/stations/REGISTRY-GAP.js"></script>
   <script>window.SCOUT_DATA = {meta: window.SCOUT_META, stations: window.SCOUT_STATIONS};</script>
   <script>
     const {meta, stations} = window.SCOUT_DATA;
-    const esc = v => String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+    const esc = v => String(v??"").replace(/[&<>"']/g,c=>({"&":"&","<":"<",">":">","\"":""","'":"&#39;"}[c]));
     const n = stations.reduce((a,s)=>a+(s.contests||[]).length,0);
     document.getElementById("stats").textContent = n+" verified listings · Verified "+meta.verified+" · "+meta.stationPages+"+1 station registry";
     document.getElementById("shield").textContent = meta.scamShield;
